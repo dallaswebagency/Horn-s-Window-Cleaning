@@ -223,8 +223,11 @@ summary .pm::after{transform:translate(-50%,-50%) rotate(90deg);transition:.3s}
 details[open] summary .pm{background:var(--blue);border-color:var(--blue);color:#fff}
 details[open] summary .pm::after{transform:translate(-50%,-50%) rotate(0)}
 details p{padding:0 50px 26px 0;color:#45535d}
-.contact-card{background:var(--ink);color:#fff;padding:46px;position:relative}
-.contact-card::after{content:"";position:absolute;top:0;right:0;width:70px;height:70px;background:linear-gradient(225deg,var(--paper) 50%,var(--blue) 50%)}
+.contact-card{background:var(--ink);color:#fff;padding:52px 46px 46px;position:relative;border-top:6px solid var(--blue);margin:0 22px 22px 0}
+.contact-card::before{content:"";position:absolute;inset:16px -22px -22px 16px;border:1.5px solid var(--blue);z-index:-1}
+.contact-card::after{content:"";position:absolute;top:-6px;left:46px;width:90px;height:6px;background:#fff}
+.fc-grid>.contact-card{isolation:auto}
+.fc{position:relative;z-index:0}
 .contact-card h2{color:#fff;margin-bottom:12px}
 .contact-card .lead{color:#b6c6d1;margin-bottom:28px}
 .cc-lines{display:grid;grid-template-columns:.8fr 1.2fr;gap:1px;background:var(--line-l);border:1px solid var(--line-l);margin-bottom:28px}
@@ -427,8 +430,8 @@ footer{background:var(--navy);color:#a9bfcd;padding:80px 0 0}
           <img src="images/pressure-washing.jpg" alt="Power and pressure washing">
           <img src="images/eavestrough-cleaning.jpg" alt="Eavestrough cleaning">
           <img src="images/dryer-vent.jpg" alt="Dryer vent cleaning">
-          <img src="images/commercial-building.jpg" alt="Post-construction cleaning">
-          <img src="images/siding-home.jpg" alt="Siding cleaning">
+          <img src="images/post-construction-cleaning.jpg" alt="Post-construction cleaning">
+          <img src="images/siding-cleaning.jpg" alt="Siding cleaning">
         </div>
         <div class="cap mono" id="svcCap">01 / Window Cleaning</div>
       </div>
