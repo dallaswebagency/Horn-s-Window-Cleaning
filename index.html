@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Window Cleaning | Calgary, Alberta | 403-830-2236 | Horn's Window Cleaning</title>
+<meta name="description" content="Horn's Window Cleaning: 30 years of professional commercial, low-rise and high-rise window cleaning, pressure washing, eavestrough and post-construction cleaning in Calgary, Alberta.">
+<link rel="icon" href="images/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#0D96D6; --blue-d:#0A73A6; --navy:#06202F; --navy-2:#0B2C40;
+  --ink:#0B1218; --paper:#F2F5F7; --glass:#DCEEF8; --white:#fff;
+  --line:rgba(11,18,24,.12); --line-l:rgba(255,255,255,.14);
+  --disp:"Archivo",system-ui,sans-serif; --body:"Instrument Sans",system-ui,sans-serif; --mono:"JetBrains Mono",ui-monospace,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);color:var(--ink);background:var(--paper);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1240px,92vw);margin:0 auto}
+.mono{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+h1,h2,h3{font-family:var(--disp);font-stretch:112%;font-weight:800;line-height:1.02;letter-spacing:-.02em}
+.btn{display:inline-flex;align-items:center;gap:.6em;font-weight:600;font-size:15px;padding:15px 24px;border:1.5px solid transparent;transition:.25s;cursor:pointer;font-family:var(--body)}
+.btn-blue{background:var(--blue);color:#fff}
+.btn-blue:hover{background:var(--blue-d)}
+.btn-line{border-color:currentColor}
+.btn-line:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+.btn svg{width:16px;height:16px}
+
+/* topbar */
+.topbar{background:var(--navy);color:#cfe3ef}
+.topbar .wrap{display:flex;justify-content:space-between;gap:20px;padding:9px 0;font-size:13px}
+.topbar span{display:inline-flex;gap:8px;align-items:center}
+.topbar .dot{width:6px;height:6px;background:var(--blue);display:inline-block}
+.topbar a:hover{color:#fff}
+
+/* header */
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:88px}
+.logo img{height:70px;width:auto}
+nav ul{display:flex;list-style:none;gap:34px;align-items:center}
+nav a{font-weight:500;font-size:15px;position:relative;padding:6px 0}
+nav>ul>li>a::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--blue);transition:.25s}
+nav>ul>li>a:hover::after,nav a.on::after{width:100%}
+.dd{position:relative}
+.dd>ul{position:absolute;top:100%;left:-18px;background:#fff;border:1px solid var(--line);display:block;padding:10px 0;min-width:240px;opacity:0;visibility:hidden;transform:translateY(8px);transition:.2s;box-shadow:0 20px 40px -20px rgba(6,32,47,.3)}
+.dd:hover>ul{opacity:1;visibility:visible;transform:none}
+.dd>ul a{display:block;padding:9px 18px;font-size:14px}
+.dd>ul a:hover{background:var(--glass);color:var(--blue-d)}
+.h-cta{display:flex;align-items:center;gap:22px}
+.h-phone{display:flex;flex-direction:column;line-height:1.2;text-align:right}
+.h-phone .mono{font-size:10px;color:#6a7a86}
+.h-phone b{font-family:var(--disp);font-stretch:105%;font-size:19px}
+.burger{display:none;background:none;border:0;width:44px;height:44px;cursor:pointer}
+.burger span{display:block;height:2px;background:var(--ink);margin:6px 8px}
+
+/* hero */
+.hero{position:relative;overflow:hidden;background:
+  linear-gradient(90deg,var(--line) 1px,transparent 1px) 0 0/120px 100%,
+  linear-gradient(var(--paper),var(--paper));}
+.hero>.wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:60px;align-items:end;padding:44px 0 0}
+.eyebrow{display:flex;align-items:center;gap:12px;color:var(--blue-d);margin-bottom:26px}
+.eyebrow::before{content:"";width:34px;height:2px;background:var(--blue)}
+.hero h1{font-size:clamp(44px,5.6vw,82px)}
+.hero h1 em{font-style:normal;color:var(--blue)}
+.hero-sub{display:flex;gap:26px;align-items:flex-start;margin:28px 0 30px;max-width:600px}
+.hero-sub h2{font-size:15px;font-stretch:100%;font-weight:700;text-transform:uppercase;letter-spacing:.06em;white-space:nowrap;padding-top:4px;border-top:2px solid var(--ink)}
+.hero-sub p{color:#3a4852}
+.hero-btns{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:48px}
+.hero-fig{position:relative;justify-self:end;width:100%;max-width:470px}
+.hero-fig .pic{clip-path:polygon(0 0,82% 0,100% 12%,100% 100%,0 100%);height:540px;overflow:hidden}
+.hero-fig .pic img{width:100%;height:100%;object-fit:cover}
+.ruler{position:absolute;left:-58px;top:0;bottom:0;width:44px;display:flex;flex-direction:column;justify-content:space-between;align-items:flex-end;border-right:1px solid var(--ink);padding:0 0 0 0}
+.ruler i{font-style:normal;white-space:nowrap;font-family:var(--mono);font-size:11px;position:relative;padding-right:12px;transform:translateY(-50%)}
+.ruler i:last-child{transform:translateY(50%)}
+.ruler i::after{content:"";position:absolute;right:0;top:50%;width:8px;height:1px;background:var(--ink)}
+.ruler::before{content:"";position:absolute;right:-1px;top:0;bottom:0;width:6px;background:repeating-linear-gradient(var(--ink) 0 1px,transparent 1px 12px)}
+.reach-tag{position:absolute;top:22px;right:-14px;background:var(--blue);color:#fff;padding:10px 14px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;line-height:1.4}
+.reach-tag b{display:block;font-family:var(--disp);font-size:26px;font-stretch:110%;letter-spacing:-.01em}
+
+/* quote rail */
+.rail{background:var(--ink);color:#fff;position:relative;z-index:2}
+.rail form{display:grid;grid-template-columns:220px 1fr 1fr 1.4fr auto;align-items:stretch}
+.rail .lbl{padding:22px 24px;background:var(--blue);display:flex;flex-direction:column;justify-content:center}
+.rail .lbl b{font-family:var(--disp);font-stretch:110%;font-size:20px;line-height:1.1}
+.rail .lbl span{font-size:12px;opacity:.85;margin-top:4px}
+.rail input{background:transparent;border:0;border-right:1px solid var(--line-l);color:#fff;font:inherit;font-size:15px;padding:0 22px;outline:none;min-height:76px}
+.rail input::placeholder{color:#8ea2b0}
+.rail input:focus{background:rgba(255,255,255,.05)}
+.rail button{background:#fff;color:var(--ink);border:0;font:600 15px var(--body);padding:0 30px;cursor:pointer;display:flex;align-items:center;gap:10px;transition:.25s}
+.rail button:hover{background:var(--glass)}
+
+/* stats band */
+.band{background:var(--navy);color:#fff;padding:90px 0}
+.band .head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:56px}
+.band h2{font-size:clamp(32px,3.6vw,52px);max-width:640px}
+.band h2 span{color:var(--blue)}
+.band .head p{max-width:400px;color:#a9bfcd}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line-l)}
+.stat{padding:30px 28px 0 0;border-right:1px solid var(--line-l);margin-right:28px}
+.stat:last-child{border-right:0;margin-right:0}
+.stat b{display:block;font-family:var(--disp);font-stretch:125%;font-weight:800;font-size:clamp(44px,5vw,72px);line-height:1;letter-spacing:-.03em}
+.stat b small{font-size:.42em;color:var(--blue);margin-left:4px;letter-spacing:0}
+.stat .mono{color:var(--blue);display:block;margin:16px 0 8px}
+.stat p{color:#a9bfcd;font-size:15px}
+
+/* services index */
+.svc{padding:120px 0}
+.sec-head{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:end;margin-bottom:60px}
+.sec-head h2{font-size:clamp(36px,4.4vw,64px)}
+.sec-head p{color:#45535d;max-width:470px}
+.svc-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px}
+.svc-preview{position:sticky;top:120px;height:520px;align-self:start}
+.svc-preview .frame{position:absolute;inset:0;overflow:hidden;background:#ccd}
+.svc-preview .frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.06);transition:opacity .5s,transform .9s}
+.svc-preview .frame img.on{opacity:1;transform:none}
+.svc-preview::before{content:"";position:absolute;inset:22px -22px -22px 22px;border:1.5px solid var(--blue)}
+.svc-preview .cap{position:absolute;left:0;bottom:0;background:#fff;padding:14px 18px;z-index:2}
+.svc-list{list-style:none;border-top:1px solid var(--line)}
+.svc-row{border-bottom:1px solid var(--line);padding:28px 0;display:grid;grid-template-columns:64px 1fr auto;gap:18px;cursor:pointer;transition:.3s}
+.svc-row .n{font-family:var(--mono);font-size:13px;color:#7f8c95;padding-top:8px}
+.svc-row h3{font-size:clamp(24px,2.4vw,34px);font-stretch:108%;transition:.3s}
+.svc-row p{color:#4a5862;font-size:15.5px;max-height:0;overflow:hidden;opacity:0;transition:max-height .45s,opacity .35s,margin .3s}
+.svc-row .go{width:46px;height:46px;border:1.5px solid var(--line);display:grid;place-items:center;transition:.3s;align-self:start}
+.svc-row .go svg{width:16px;transition:.3s}
+.svc-row.on h3{color:var(--blue-d)}
+.svc-row.on p{max-height:140px;opacity:1;margin-top:12px}
+.svc-row.on .go{background:var(--blue);border-color:var(--blue);color:#fff}
+.svc-row.on .go svg{transform:rotate(-45deg)}
+.svc-row a.inline{display:inline-block;margin-top:10px;font-weight:600;color:var(--blue-d);border-bottom:1.5px solid}
+
+/* lift */
+.lift{background:var(--ink);color:#fff;padding:120px 0 0;position:relative;overflow:hidden}
+.lift::before{content:"98 FT";position:absolute;right:-2vw;top:40px;font-family:var(--disp);font-stretch:125%;font-weight:900;font-size:22vw;line-height:.8;color:rgba(255,255,255,.035);pointer-events:none}
+.lift-top{display:grid;grid-template-columns:1.05fr .95fr;gap:70px;align-items:start;position:relative}
+.lift h2{font-size:clamp(40px,5.2vw,78px)}
+.lift h2 span{display:block;color:var(--blue)}
+.lift .lead{color:#b6c6d1;margin:28px 0 36px;max-width:520px}
+.sheet{border:1px solid var(--line-l);background:rgba(255,255,255,.02)}
+.sheet-h{display:flex;justify-content:space-between;padding:16px 22px;border-bottom:1px solid var(--line-l);color:var(--blue)}
+.sheet dl{display:grid;grid-template-columns:1fr 1.3fr}
+.sheet dt,.sheet dd{padding:15px 22px;border-bottom:1px solid var(--line-l)}
+.sheet dt{color:#8ea2b0}
+.sheet dd{font-weight:500;border-left:1px solid var(--line-l)}
+.sheet dd b{font-family:var(--disp);font-stretch:115%;font-size:22px;color:#fff}
+.sheet dl>*:nth-last-child(-n+2){border-bottom:0}
+.lift-gal{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:4px;margin-top:90px}
+.lift-gal figure{position:relative;height:380px;overflow:hidden}
+.lift-gal img{width:100%;height:100%;object-fit:cover;transition:transform 1s}
+.lift-gal figure:hover img{transform:scale(1.04)}
+.lift-gal figcaption{position:absolute;left:0;bottom:0;right:0;padding:40px 20px 16px;background:linear-gradient(transparent,rgba(6,20,30,.85));color:#fff}
+
+/* buildings */
+.bld{padding:120px 0;background:#fff}
+.bld-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.bld h2{font-size:clamp(36px,4.2vw,60px);margin-bottom:22px}
+.bld .intro{color:#45535d;margin-bottom:38px;max-width:520px}
+.stack{border:1.5px solid var(--ink);border-top-width:6px}
+.floor{display:grid;grid-template-columns:76px 1fr auto;align-items:center;border-bottom:1px solid var(--line);transition:.25s}
+.floor:last-child{border-bottom:0}
+.floor .fl{font-family:var(--mono);font-size:12px;color:#7f8c95;padding:17px 0 17px 18px;border-right:1px solid var(--line);height:100%;display:flex;align-items:center}
+.floor span{padding:0 20px;font-weight:600;font-size:17px}
+.floor i{font-style:normal;padding-right:18px}
+.floor .wins{display:flex;gap:4px}
+.floor .wins b{width:14px;height:18px;border:1px solid #b8c6cf;background:var(--glass)}
+.floor:hover{background:var(--glass)}
+.floor:hover .wins b{background:var(--blue);border-color:var(--blue)}
+.bld-pics{position:relative;height:640px}
+.bld-pics .a{position:absolute;right:0;top:0;width:78%;height:72%;object-fit:cover}
+.bld-pics .b{position:absolute;left:0;bottom:0;width:52%;height:46%;object-fit:cover;border:10px solid #fff}
+.bld-pics .note{position:absolute;right:0;bottom:30px;width:40%;background:var(--paper);padding:22px;border-left:3px solid var(--blue)}
+.bld-pics .note h3{font-size:19px;font-stretch:104%;margin-bottom:8px}
+.bld-pics .note p{font-size:14.5px;color:#45535d}
+
+/* team */
+.team{padding:120px 0}
+.team-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:90px;align-items:center}
+.team-pics{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.team-pics img{width:100%;height:470px;object-fit:cover}
+.team-pics img:nth-child(2){margin-top:90px}
+.team h2{font-size:clamp(36px,4.2vw,60px);margin-bottom:24px}
+.team .lead{color:#45535d;margin-bottom:34px}
+.hire{background:#fff;border:1px solid var(--line);padding:30px}
+.hire h3{font-size:22px;font-stretch:105%;margin-bottom:18px;display:flex;align-items:center;gap:12px}
+.hire h3::before{content:"";width:10px;height:10px;background:var(--blue)}
+.hire ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:12px 22px}
+.hire li{display:flex;gap:10px;font-size:15.5px}
+.hire li svg{flex:none;width:18px;color:var(--blue);margin-top:4px}
+.team .btn{margin-top:30px}
+
+/* work strip */
+.work{background:var(--navy);color:#fff;padding:100px 0}
+.work-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:40px}
+.work h2{font-size:clamp(32px,3.6vw,52px)}
+.work-ctrl{display:flex;gap:8px}
+.work-ctrl button{width:52px;height:52px;border:1px solid var(--line-l);background:none;color:#fff;cursor:pointer;display:grid;place-items:center;transition:.25s}
+.work-ctrl button:hover{background:var(--blue);border-color:var(--blue)}
+.work-ctrl svg{width:18px}
+.strip{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding-left:max(4vw,calc((100vw - 1240px)/2));padding-right:4vw;scrollbar-width:none}
+.strip::-webkit-scrollbar{display:none}
+.strip figure{flex:none;scroll-snap-align:start;position:relative}
+.strip img{height:430px;width:auto;object-fit:cover}
+.strip figure.w img{width:560px}
+.strip figure.t img{width:320px}
+.strip figcaption{margin-top:14px;color:#a9bfcd;display:flex;gap:12px}
+.strip figcaption b{color:var(--blue);font-weight:500}
+
+/* faq + contact */
+.fc{padding:120px 0}
+.fc-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px}
+.fc h2{font-size:clamp(34px,3.8vw,54px);margin-bottom:34px}
+details{border-top:1px solid var(--line)}
+details:last-of-type{border-bottom:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;padding:26px 0;display:flex;justify-content:space-between;gap:20px;font-family:var(--disp);font-stretch:104%;font-weight:700;font-size:21px}
+summary::-webkit-details-marker{display:none}
+summary .pm{flex:none;width:30px;height:30px;border:1.5px solid var(--ink);position:relative;transition:.3s}
+summary .pm::before,summary .pm::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:1.5px;background:currentColor;transform:translate(-50%,-50%)}
+summary .pm::after{transform:translate(-50%,-50%) rotate(90deg);transition:.3s}
+details[open] summary .pm{background:var(--blue);border-color:var(--blue);color:#fff}
+details[open] summary .pm::after{transform:translate(-50%,-50%) rotate(0)}
+details p{padding:0 50px 26px 0;color:#45535d}
+.contact-card{background:var(--ink);color:#fff;padding:46px;position:relative}
+.contact-card::after{content:"";position:absolute;top:0;right:0;width:70px;height:70px;background:linear-gradient(225deg,var(--paper) 50%,var(--blue) 50%)}
+.contact-card h2{color:#fff;margin-bottom:12px}
+.contact-card .lead{color:#b6c6d1;margin-bottom:28px}
+.cc-lines{display:grid;grid-template-columns:.8fr 1.2fr;gap:1px;background:var(--line-l);border:1px solid var(--line-l);margin-bottom:28px}
+.cc-lines a{background:var(--ink);padding:16px 18px;display:block;transition:.25s}
+.cc-lines a:hover{background:var(--navy-2)}
+.cc-lines .mono{color:var(--blue);font-size:10.5px}
+.cc-lines b{display:block;font-weight:600;margin-top:4px;word-break:break-word}
+.cform{display:grid;gap:12px}
+.cform input,.cform textarea{width:100%;background:rgba(255,255,255,.05);border:1px solid var(--line-l);color:#fff;font:inherit;font-size:15px;padding:15px 16px;outline:none;transition:.2s}
+.cform input:focus,.cform textarea:focus{border-color:var(--blue)}
+.cform textarea{min-height:120px;resize:vertical}
+.cform ::placeholder{color:#8ea2b0}
+.cform .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.cform .btn{justify-content:center}
+.est-note{display:flex;gap:12px;margin-top:20px;font-size:13.5px;color:#a9bfcd;line-height:1.5}
+.est-note svg{flex:none;width:18px;color:var(--blue)}
+
+/* footer */
+footer{background:var(--navy);color:#a9bfcd;padding:80px 0 0}
+.f-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:50px;padding-bottom:60px;border-bottom:1px solid var(--line-l)}
+.f-logo img{height:90px;width:auto;margin-bottom:20px}
+.f-grid h4{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#fff;margin-bottom:20px;font-weight:500}
+.f-grid ul{list-style:none;display:grid;gap:10px;font-size:15px}
+.f-grid a:hover{color:#fff}
+.f-call{font-family:var(--disp);font-stretch:112%;font-size:26px;font-weight:800;color:#fff;display:block;margin-bottom:6px}
+.f-bot{display:flex;justify-content:space-between;gap:20px;padding:24px 0;font-size:13.5px;flex-wrap:wrap}
+.f-bot a{color:#fff;border-bottom:1px solid var(--blue)}
+
+.mbar{display:none}
+.rv{opacity:0;transform:translateY(26px);transition:opacity .8s,transform .8s}
+.rv.in{opacity:1;transform:none}
+
+@media(max-width:1080px){
+  nav,.h-phone{display:none}
+  .burger{display:block}
+  nav.open{display:block;position:absolute;top:88px;left:0;right:0;background:#fff;border-bottom:1px solid var(--line);padding:10px 4vw 20px}
+  nav.open ul{flex-direction:column;align-items:flex-start;gap:6px}
+  nav.open .dd>ul{position:static;opacity:1;visibility:visible;transform:none;border:0;box-shadow:none;padding:0 0 0 14px}
+  .hero>.wrap{grid-template-columns:1fr;gap:40px}
+  .hero-fig{justify-self:start;margin-left:58px;max-width:none;width:calc(100% - 58px)}
+  .hero-fig .pic{height:460px}
+  .hero-btns{margin-bottom:0}
+  .rail form{grid-template-columns:1fr 1fr}
+  .rail .lbl{grid-column:1/-1}
+  .rail input{border-bottom:1px solid var(--line-l)}
+  .rail input:nth-of-type(3){grid-column:1/-1}
+  .rail button{grid-column:1/-1;min-height:64px;justify-content:center}
+  .stats{grid-template-columns:1fr 1fr;row-gap:30px}
+  .stat:nth-child(2){border-right:0;margin-right:0}
+  .band .head,.sec-head{display:block}
+  .band .head p,.sec-head p{margin-top:18px}
+  .svc-grid,.lift-top,.bld-grid,.team-grid,.fc-grid{grid-template-columns:1fr;gap:50px}
+  .svc-preview{position:relative;top:0;height:340px;margin-right:22px}
+  .lift-gal{grid-template-columns:1fr 1fr}
+  .lift-gal figure:first-child{grid-column:1/-1}
+  .bld-pics{height:520px}
+  .f-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:640px){
+  body{font-size:16px}
+  .topbar .hide-s{display:none}
+  .topbar .wrap{justify-content:center}
+  header .wrap{height:76px}
+  .logo img{height:56px}
+  nav.open{top:76px}
+  .h-cta .btn{display:none}
+  .hero>.wrap{padding-top:44px}
+  .hero-sub{flex-direction:column;gap:12px}
+  .hero-fig{margin-left:46px;width:calc(100% - 46px)}
+  .ruler{left:-46px;width:36px}
+  .ruler i{font-size:9.5px;padding-right:9px}
+  .hero-fig .pic{height:380px}
+  .rail form{grid-template-columns:1fr}
+  .rail input{grid-column:1/-1;min-height:60px}
+  .stats{grid-template-columns:1fr}
+  .stat{border-right:0;margin-right:0;padding-right:0}
+  .svc,.bld,.team,.fc,.lift{padding-top:80px}
+  .svc,.bld,.team,.fc{padding-bottom:80px}
+  .svc-row{grid-template-columns:40px 1fr 40px}
+  .svc-row .go{width:40px;height:40px}
+  .sheet dl{grid-template-columns:1fr}
+  .sheet dd{border-left:0;padding-top:0}
+  .sheet dt{border-bottom:0;padding-bottom:4px}
+  .lift-gal{grid-template-columns:1fr}
+  .lift-gal figure{height:280px}
+  .bld-pics{height:auto;display:grid;gap:12px}
+  .bld-pics img,.bld-pics .note{position:static;width:100%!important;height:260px!important;border:0}
+  .bld-pics .note{height:auto!important}
+  .floor{grid-template-columns:58px 1fr}
+  .floor .wins{display:none}
+  .team-pics img{height:300px}
+  .team-pics img:nth-child(2){margin-top:50px}
+  .hire ul{grid-template-columns:1fr}
+  .strip img{height:300px}
+  .strip figure.w img{width:400px}
+  .strip figure.t img{width:225px}
+  .contact-card{padding:30px 22px}
+  .cc-lines,.cform .row{grid-template-columns:1fr}
+  .f-grid{grid-template-columns:1fr}
+  .mbar{display:grid;grid-template-columns:1fr 1fr;position:fixed;left:0;right:0;bottom:0;z-index:60}
+  .mbar a{padding:16px;text-align:center;font-weight:600;color:#fff;background:var(--ink)}
+  .mbar a+a{background:var(--blue)}
+  footer{padding-bottom:56px}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <span class="hide-s"><i class="dot"></i>Calgary, Alberta &amp; surrounding areas</span>
+    <span class="hide-s">Fully licensed &amp; insured &middot; WCB covered</span>
+    <span><a href="mailto:hornswindow@gmail.com">hornswindow@gmail.com</a></span>
+  </div>
+</div>
+
+<header>
+  <div class="wrap">
+    <a href="#" class="logo"><img src="images/logo.png" alt="Horn's Window Cleaning"></a>
+    <nav id="nav">
+      <ul>
+        <li><a href="#" class="on">Home</a></li>
+        <li class="dd"><a href="#services">Services &#9662;</a>
+          <ul>
+            <li><a href="#services">Window Cleaning</a></li>
+            <li><a href="#services">Power Washing</a></li>
+            <li><a href="#services">Pressure Washing</a></li>
+            <li><a href="#services">Eavestrough Cleaning</a></li>
+            <li><a href="#services">Dryer Vent Cleaning</a></li>
+          </ul>
+        </li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+    </nav>
+    <div class="h-cta">
+      <a href="tel:4038302236" class="h-phone"><span class="mono">Call Now</span><b>403-830-2236</b></a>
+      <a href="#contact" class="btn btn-blue">Free Estimate</a>
+      <button class="burger" aria-label="Menu" onclick="document.getElementById('nav').classList.toggle('open')"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow mono">30 Years of Professional Window Cleaning Service</div>
+      <h1>Your Trusted Source for <em>All Windows</em></h1>
+      <div class="hero-sub">
+        <h2>Specializing in Difficult Jobs</h2>
+        <p>Commercial, low-rise and high-rise window cleaning across Calgary, with safety-focused equipment and affordable pricing for commercial and industrial clients.</p>
+      </div>
+      <div class="hero-btns">
+        <a href="#contact" class="btn btn-blue">Order Window Cleaning <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="tel:4038302236" class="btn btn-line">Call Now: 403-830-2236</a>
+      </div>
+    </div>
+    <div class="hero-fig">
+      <div class="ruler"><i>30 m</i><i>20 m</i><i>10 m</i><i>0 m</i></div>
+      <div class="pic"><img src="images/rope-access-curved-glass.jpg" alt="Horn's crew cleaning a curved glass tower on rope access"></div>
+      <div class="reach-tag">Lift reach<b>98 ft</b></div>
+    </div>
+  </div>
+  <div class="rail">
+    <form class="wrap" onsubmit="event.preventDefault();this.querySelector('button').textContent='Thanks, we will be in touch'">
+      <div class="lbl"><b>Get A Free Estimate</b><span>No obligation. Fast reply.</span></div>
+      <input type="text" placeholder="Name" required>
+      <input type="email" placeholder="Email" required>
+      <input type="text" placeholder="Message: building, windows, timing">
+      <button type="submit">Send <svg width="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+    </form>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="head rv">
+      <h2>We take window cleaning <span>to new heights.</span></h2>
+      <p>Three decades on Calgary's toughest facades: glass towers, strata complexes and the hard-to-access spots other crews pass on.</p>
+    </div>
+    <div class="stats rv">
+      <div class="stat"><b>30<small>yrs</small></b><span class="mono">Experience</span><p>Of professional window cleaning service in Calgary.</p></div>
+      <div class="stat"><b>30<small>m</small></b><span class="mono">Extreme access</span><p>Teupen Leo 30T lift reaching up to 98 feet.</p></div>
+      <div class="stat"><b>3<small>tiers</small></b><span class="mono">Building heights</span><p>Low-rise, mid-rise and high-rise buildings.</p></div>
+      <div class="stat"><b>WCB</b><span class="mono">Covered crew</span><p>Trained, insured and bonded window cleaners.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="svc" id="services">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <h2>We offer more than just window cleaning</h2>
+      <p>From skylights and sills to eavestroughs, siding and post-construction clean-ups, one licensed and insured team handles the whole exterior.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc-preview rv">
+        <div class="frame">
+          <img class="on" src="images/high-rise-window-cleaner.jpg" alt="Window cleaning">
+          <img src="images/pressure-washing.jpg" alt="Power and pressure washing">
+          <img src="images/eavestrough-cleaning.jpg" alt="Eavestrough cleaning">
+          <img src="images/dryer-vent.jpg" alt="Dryer vent cleaning">
+          <img src="images/commercial-building.jpg" alt="Post-construction cleaning">
+          <img src="images/siding-home.jpg" alt="Siding cleaning">
+        </div>
+        <div class="cap mono" id="svcCap">01 / Window Cleaning</div>
+      </div>
+      <ul class="svc-list">
+        <li class="svc-row on" data-i="0">
+          <span class="n">01</span>
+          <div><h3>Window Cleaning</h3><p>Exterior and interior windows, skylights, window sills, frames and sashes, on everything from townhomes to high-rise glass.<br><a class="inline" href="#contact">Order Window Cleaning</a></p></div>
+          <span class="go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </li>
+        <li class="svc-row" data-i="1">
+          <span class="n">02</span>
+          <div><h3>Power &amp; Pressure Washing</h3><p>Fully licensed and insured power washing for commercial properties and property managers across Calgary.<br><a class="inline" href="#contact">Get Power Washing</a></p></div>
+          <span class="go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </li>
+        <li class="svc-row" data-i="2">
+          <span class="n">03</span>
+          <div><h3>Eavestrough Cleaning</h3><p>Spotless eavestroughs before the next storm. Clearing them promptly helps prevent water damage. Free estimates.<br><a class="inline" href="#contact">Order Eavestrough Cleaning</a></p></div>
+          <span class="go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </li>
+        <li class="svc-row" data-i="3">
+          <span class="n">04</span>
+          <div><h3>Dryer Vent Cleaning</h3><p>Dryer not performing like it used to? A clogged dryer vent may be the reason. Improve your home with a vent cleaning.<br><a class="inline" href="#contact">Request Dryer Vent Cleaning</a></p></div>
+          <span class="go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </li>
+        <li class="svc-row" data-i="4">
+          <span class="n">05</span>
+          <div><h3>Post-Construction Cleaning</h3><p>Post-construction cleaning for new and renovated buildings, plus consultation on pre-construction buildings.<br><a class="inline" href="#contact">Get A Free Estimate</a></p></div>
+          <span class="go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </li>
+        <li class="svc-row" data-i="5">
+          <span class="n">06</span>
+          <div><h3>Siding Cleaning</h3><p>Siding cleaning for commercial properties, condo complexes and homes. Not sure what you need? Ask us anything.<br><a class="inline" href="#contact">Ask Us Anything</a></p></div>
+          <span class="go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="lift" id="lift">
+  <div class="wrap">
+    <div class="lift-top">
+      <div class="rv">
+        <div class="eyebrow mono">Our Extreme Access Lift for Window Cleaning</div>
+        <h2>We take window cleaning <span>to new heights</span></h2>
+        <p class="lead">Our specialized lift reaches the spots where rope access is unsafe or roof access simply isn't available, so the glass gets cleaned without compromise.</p>
+        <a href="#contact" class="btn btn-blue">Get An Access Lift Cleaning <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="sheet rv">
+        <div class="sheet-h mono"><span>Spec sheet</span><span>Teupen Leo 30T</span></div>
+        <dl>
+          <dt>Working height</dt><dd><b>30 m / 98 ft</b></dd>
+          <dt>Engineering</dt><dd>German-engineered</dd>
+          <dt>Surface impact</dt><dd>Low impact on lawns and paving</dd>
+          <dt>Terrain</dt><dd>Sets up on landscaped or sloped ground</dd>
+          <dt>Access</dt><dd>Fits through double doors</dd>
+          <dt>Certification</dt><dd>CSA approved</dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+  <div class="lift-gal">
+    <figure><img src="images/lift-blue-tower.jpg" alt="Teupen lift at a blue glass office tower"><figcaption class="mono">High-rise glass, Calgary</figcaption></figure>
+    <figure><img src="images/lift-indoor-atrium.jpg" alt="Lift set up inside a mall atrium"><figcaption class="mono">Through double doors, indoors</figcaption></figure>
+    <figure><img src="images/teupen-outrigger.jpg" alt="Lift outrigger on landscaped lawn"><figcaption class="mono">Low impact on landscaping</figcaption></figure>
+  </div>
+</section>
+
+<section class="bld">
+  <div class="wrap bld-grid">
+    <div class="rv">
+      <div class="eyebrow mono">Who we clean for</div>
+      <h2>Commercial, low-rise, &amp; high-rise</h2>
+      <p class="intro">Every floor, every frame. We work for commercial businesses and property managers on buildings of every height, including the hard-to-access ones.</p>
+      <div class="stack">
+        <div class="floor"><span class="fl">FL 07</span><span>High-rise buildings</span><i class="wins"><b></b><b></b><b></b><b></b></i></div>
+        <div class="floor"><span class="fl">FL 06</span><span>Office buildings</span><i class="wins"><b></b><b></b><b></b><b></b></i></div>
+        <div class="floor"><span class="fl">FL 05</span><span>Condo &amp; strata complexes</span><i class="wins"><b></b><b></b><b></b><b></b></i></div>
+        <div class="floor"><span class="fl">FL 04</span><span>Apartments</span><i class="wins"><b></b><b></b><b></b><b></b></i></div>
+        <div class="floor"><span class="fl">FL 03</span><span>Townhomes</span><i class="wins"><b></b><b></b><b></b><b></b></i></div>
+        <div class="floor"><span class="fl">FL 02</span><span>Commercial businesses</span><i class="wins"><b></b><b></b><b></b><b></b></i></div>
+        <div class="floor"><span class="fl">FL 01</span><span>Hard-to-access locations</span><i class="wins"><b></b><b></b><b></b><b></b></i></div>
+      </div>
+    </div>
+    <div class="bld-pics rv">
+      <img class="a" src="images/lift-condo-building.jpg" alt="Lift cleaning windows on a Calgary condo building">
+      <img class="b" src="images/lift-office-low-rise.jpg" alt="Lift at a low-rise office building">
+      <div class="note"><h3>Pressure Washing in Calgary</h3><p>We serve commercial properties and property managers with a full range of exterior cleaning services.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="team" id="about">
+  <div class="wrap team-grid">
+    <div class="team-pics rv">
+      <img src="images/rope-access-tower.jpg" alt="Window cleaners on rope access">
+      <img src="images/rope-access-crew.jpg" alt="Horn's window cleaning crew on a glass facade">
+    </div>
+    <div class="rv">
+      <div class="eyebrow mono">About Our Window Cleaning Team</div>
+      <h2>A reputation built on professionalism &amp; safety</h2>
+      <p class="lead">Horn's Window Cleaning has a long-established reputation in Calgary. Many of our clients are repeat customers, and they come back because the work is done right and done safely.</p>
+      <div class="hire">
+        <h3>We Only Hire the Best Employees</h3>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 12l5 5L20 6"/></svg>Selective hiring process</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 12l5 5L20 6"/></svg>Trained window cleaners</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 12l5 5L20 6"/></svg>Insured and bonded</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 12l5 5L20 6"/></svg>Covered by WCB</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 12l5 5L20 6"/></svg>Low staff turnover</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 12l5 5L20 6"/></svg>Repeat clients</li>
+        </ul>
+      </div>
+      <a href="#contact" class="btn btn-line">Learn More About Us</a>
+    </div>
+  </div>
+</section>
+
+<section class="work">
+  <div class="wrap work-head rv">
+    <div><div class="eyebrow mono">Recent work</div><h2>On the job in Calgary</h2></div>
+    <div class="work-ctrl">
+      <button aria-label="Previous" onclick="strip.scrollBy({left:-500,behavior:'smooth'})"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button>
+      <button aria-label="Next" onclick="strip.scrollBy({left:500,behavior:'smooth'})"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+    </div>
+  </div>
+  <div class="strip" id="strip">
+    <figure class="w"><img src="images/lift-glass-office.jpg" alt="Lift at glass office"><figcaption class="mono"><b>01</b>Glass office, lift access</figcaption></figure>
+    <figure class="t"><img src="images/high-rise-window-cleaner.jpg" alt="High-rise window cleaner"><figcaption class="mono"><b>02</b>High-rise rope access</figcaption></figure>
+    <figure class="w"><img src="images/lift-street-setup.jpg" alt="Lift setup on street lawn"><figcaption class="mono"><b>03</b>Boulevard setup</figcaption></figure>
+    <figure class="t"><img src="images/rope-access-brick.jpg" alt="Rope access on brick building"><figcaption class="mono"><b>04</b>Mid-rise facade</figcaption></figure>
+    <figure class="w"><img src="images/teupen-lift-lawn.jpg" alt="Teupen lift on lawn"><figcaption class="mono"><b>05</b>Sloped landscaping</figcaption></figure>
+    <figure class="w"><img src="images/teupen-lift-rear.jpg" alt="Teupen lift tracked base"><figcaption class="mono"><b>06</b>Tracked, low-impact base</figcaption></figure>
+  </div>
+</section>
+
+<section class="fc">
+  <div class="wrap fc-grid">
+    <div id="faq" class="rv">
+      <div class="eyebrow mono">Questions</div>
+      <h2>Window Cleaning FAQs</h2>
+      <details open>
+        <summary>Why should I pick Horn's Window Cleaning? <span class="pm"></span></summary>
+        <p>We have a strong reputation, highly rated service and competitive rates. If you're a first-time customer, we'll walk you through exactly what your building needs.</p>
+      </details>
+      <details>
+        <summary>Do you offer estimates? <span class="pm"></span></summary>
+        <p>Yes. Estimates are free with no obligation. We ask that you be present at the property during the estimate so we fully understand the job.</p>
+      </details>
+      <details>
+        <summary>How can I contact you? <span class="pm"></span></summary>
+        <p>Call us at 403-830-2236 or send a message through the contact form, and we'll get back to you promptly.</p>
+      </details>
+    </div>
+    <div class="contact-card rv" id="contact">
+      <h2>Contact the Window Cleaning Experts</h2>
+      <p class="lead">Request an estimate and book an appointment.</p>
+      <div class="cc-lines">
+        <a href="tel:4038302236"><span class="mono">Phone</span><b>403-830-2236</b></a>
+        <a href="mailto:hornswindow@gmail.com"><span class="mono">Email</span><b>hornswindow@gmail.com</b></a>
+      </div>
+      <form class="cform" onsubmit="event.preventDefault();this.querySelector('button').textContent='Thank you! Message sent.'">
+        <div class="row"><input type="text" placeholder="Name" required><input type="email" placeholder="Email" required></div>
+        <textarea placeholder="Message"></textarea>
+        <button class="btn btn-blue" type="submit">Get A Free Estimate</button>
+      </form>
+      <div class="est-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>Free, no-obligation estimates. The customer must be present at the property during the estimate.</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="f-grid">
+      <div class="f-logo">
+        <img src="images/logo-white.png" alt="Horn's Window Cleaning">
+        <p>Your Trusted Source for All Windows. Commercial, low-rise and high-rise window cleaning in Calgary, Alberta and surrounding areas.</p>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Window Cleaning</a></li>
+          <li><a href="#services">Power Washing</a></li>
+          <li><a href="#services">Pressure Washing</a></li>
+          <li><a href="#services">Eavestrough Cleaning</a></li>
+          <li><a href="#services">Dryer Vent Cleaning</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Get in touch</h4>
+        <a class="f-call" href="tel:4038302236">403-830-2236</a>
+        <ul>
+          <li><a href="mailto:hornswindow@gmail.com">hornswindow@gmail.com</a></li>
+          <li>Calgary, Alberta &amp; surrounding areas</li>
+        </ul>
+      </div>
+    </div>
+    <div class="f-bot">
+      <span>&copy; 2026 All Rights Reserved | Horns Window Cleaning</span>
+      <span>Design by <a href="https://cleaningdigital.ca/" target="_blank" rel="noopener">Cleaning Digital</a></span>
+    </div>
+  </div>
+</footer>
+
+<div class="mbar"><a href="tel:4038302236">Call Now</a><a href="#contact">Free Estimate</a></div>
+
+<script>
+const rows=document.querySelectorAll('.svc-row'),imgs=document.querySelectorAll('.svc-preview img'),cap=document.getElementById('svcCap');
+rows.forEach(r=>{const act=()=>{rows.forEach(x=>x.classList.remove('on'));r.classList.add('on');imgs.forEach((im,i)=>im.classList.toggle('on',i==r.dataset.i));cap.textContent=r.querySelector('.n').textContent+' / '+r.querySelector('h3').textContent};r.addEventListener('mouseenter',act);r.addEventListener('click',act)});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
